@@ -1,0 +1,10 @@
+#Für Virtualbox; generiert (erstellt jeder selbst)
+*.vbox*
+*.vdi
+
+
+#Secrets (Private Keys, Passwörter out-of-band, SSH-Privat-Leys)
+*.key
+*.env
+
+#Editor-/OS-Müll
