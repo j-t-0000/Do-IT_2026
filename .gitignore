@@ -1,10 +1,13 @@
 #Für Virtualbox; generiert (erstellt jeder selbst)
 *.vbox*
 *.vdi
+Logs/
+Snapshots/
 
 
 #Secrets (Private Keys, Passwörter out-of-band, SSH-Privat-Leys)
 *.key
 *.env
+Secrets/
 
 #Editor-/OS-Müll
