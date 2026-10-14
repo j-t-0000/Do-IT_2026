@@ -7,7 +7,7 @@ services:
       - proxy-net
       - monitoring-internal
     volumes:
-      - monitoring-data:~/data/   #Quelle:Ziel
+      - monitoring-data:/data   #Quelle:Ziel
   
   nginx-service:
     image: nginx:1.31.6-trixie
@@ -21,6 +21,7 @@ services:
   test-web-service:
     image: alpine:3.24.2
     container_name: alpine_test_web
+    command: ["sleep", "infinity"]
     networks:
       - monitoring-internal
 
