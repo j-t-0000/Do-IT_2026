@@ -8,6 +8,7 @@ services:
       - monitoring-internal
     volumes:
       - monitoring-data:/data   #Quelle:Ziel
+      - .:/app-code:ro               #ro: read only, zusätzliches volume, wo code/skripte drin liegen
   
   nginx-service:
     image: nginx:1.31.6-trixie
