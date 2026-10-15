@@ -19,10 +19,40 @@ services:
     networks:
       - proxy-net
 
-  test-web-service:
+  test-refused-service:
     image: alpine:3.24.2
-    container_name: alpine_test_web
+    container_name: alpine_test_refused
     command: ["sleep", "infinity"]
+    networks:
+      - monitoring-internal
+
+  #für down fall: nur ein fiktiver Container in der services.json
+
+  test-web-listener:
+    image: alpine:3.24.2
+    container_name: alpine_test_web_listener
+    command: ["nc", "-lk", "-p", "80", "-e", "/bin/true"]
+    networks:
+      - monitoring-internal
+  
+  test-sql-listener:
+    image: alpine:3.24.2
+    container_name: alpine_test_sql_listener
+    command: ["nc", "-lk", "-p", "1433", "-e", "/bin/true"]
+    networks:
+      - monitoring-internal
+
+  test-ssh-listener:
+    image: alpine:3.24.2
+    container_name: alpine_test_ssh_listener
+    command: ["nc", "-lk", "-p", "22", "-e", "/bin/true"]
+    networks:
+      - monitoring-internal
+
+  test-mail-listener:
+    image: alpine:3.24.2
+    container_name: alpine_test_mail_listener
+    command: ["nc", "-lk", "-p", "587", "-e", "/bin/true"]
     networks:
       - monitoring-internal
 
