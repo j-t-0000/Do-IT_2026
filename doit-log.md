@@ -149,7 +149,6 @@ Komplett: Folien, Demo-Skript, Generalprobe
 
 ### Phase 2 – Woche 4 (KW 44): Doku & QS *(Exit: Doku abgabereif)*
 | Tag | Aufgabe | Ziel/Deliverable | h |
-
 |---|---|---|---|
 | Mo | QS-Tag: Testprotokoll ausführen (up/refused/down/invalid, TLS, atomic write) + Ist-Werte | Beweise: Screenshots, `docker stats`, `df -h`, `free -h` | 7 |
 | Di | Doku Kap. 2 (Tabellen! Kosten nach Kühnel-Formel) + Kap. 3 | Planungs-Kapitel steht | 7 |
