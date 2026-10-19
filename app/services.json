@@ -4,5 +4,6 @@
     {"name": "test-sql-listener", "port": 1433},
     {"name": "test-ssh-listener", "port": 22},
     {"name": "test-mail-listener", "port": 587},
-    {"name": "fiktiver-Container", "port": 80}
+    {"name": "fiktiver-Container", "port": 80},
+    {"name": "kaputt"}
 ]
