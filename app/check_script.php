@@ -40,6 +40,11 @@
         }
 
         $latency_ms = round(($t1 - $t0)*1000, 3);
+
+        if ($connect !== false) {               //Schließen der Ressource, falls eine angelegt wurde
+            fclose($connect);
+        }
+        
         $result[] = [
             'name' => $svc['name'],
             'state' => $state,
@@ -48,4 +53,4 @@
         echo "Name: ". $svc['name'] . " | Status: $state | error code: $error_code | error message: $error_message | Latenz: $latency_ms ms\n";
     }
 
-    echo json_encode($result);
+    echo json_encode($result) . "\n";

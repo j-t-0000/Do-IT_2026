@@ -23,7 +23,8 @@ foreach ($services as $svc) {
     $error_code = 0;
     $error_message = '';
     $connect = @fsockopen($svc['name'], $svc['port'], $error_code, $error_message, $timeout);
-    echo "Name: " . $svc['name'] . " |Port: " . $svc['port'] .
+    var_dump($connect);
+    echo "\n Name: " . $svc['name'] . " |Port: " . $svc['port'] .
         " |fsockopen-Rückgabewert: " . $connect
         . " |Error Code:" . $error_code . " |Error Message: " . $error_message . "\n";
 }
