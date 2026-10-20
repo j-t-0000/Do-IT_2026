@@ -8,7 +8,7 @@ services:
       - monitoring-internal
     volumes:
       - monitoring-data:/data   #Quelle:Ziel
-      - .:/app-code:ro               #ro: read only, zusätzliches volume, wo code/skripte drin liegen
+      - ./code:/app-code:ro               #ro: read only, zusätzliches volume, wo code/skripte drin liegen
   
   nginx-service:
     image: nginx:1.31.6-trixie
@@ -18,6 +18,8 @@ services:
       - "80:80"
     networks:
       - proxy-net
+    volumes:
+      - ./conf/nginx.conf:/etc/nginx/nginx.conf:ro
 
   test-refused-service:
     image: alpine:3.24.2
