@@ -44,7 +44,7 @@ foreach ($services as $svc) {
         fclose($connect);
     }
 
-    $result[] = [
+    $result_list [] = [
         'name' => $svc['name'],
         'state' => $state,
         'latency_ms' => $latency_ms
@@ -53,9 +53,11 @@ foreach ($services as $svc) {
     echo "Name: " . $svc['name'] . " | Port: " .  $svc['port'] . " | Status: $state | error code: $error_code | error message: $error_message | Latenz: $latency_ms ms\n";
 }
 
-$output = json_encode($result);
+$result = [
+    'timestamp' =>time(), 
+    'services' => $result_list];
 
-echo $output . "\n";
+$output = json_encode($result);
 
 //Atomares Schreiben
 $write = file_put_contents('/data/status.json.temp', $output);
