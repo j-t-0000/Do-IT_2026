@@ -21,6 +21,7 @@ foreach ($services as $svc) {
 $services = $valid;
 
 $result = [];
+$result_list = [];
 
 //Prüflogik für jeden Dienst
 foreach ($services as $svc) {
@@ -44,7 +45,7 @@ foreach ($services as $svc) {
         fclose($connect);
     }
 
-    $result_list [] = [
+    $result_list[] = [
         'name' => $svc['name'],
         'state' => $state,
         'latency_ms' => $latency_ms
@@ -55,7 +56,8 @@ foreach ($services as $svc) {
 
 $result = [
     'timestamp' =>time(), 
-    'services' => $result_list];
+    'services' => $result_list
+    ];
 
 $output = json_encode($result);
 
