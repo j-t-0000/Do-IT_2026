@@ -10,4 +10,10 @@ Snapshots/
 *.env
 Secrets/
 
+#Alles auf VM
+certs/
+cronLog/
+status.json
+*.log
+
 #Editor-/OS-Müll
