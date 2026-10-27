@@ -1,9 +1,9 @@
 [
-    {"name": "test-refused-service", "port": 80},
-    {"name": "test-web-listener", "port": 80},
-    {"name": "test-sql-listener", "port": 1433},
-    {"name": "test-ssh-listener", "port": 22},
-    {"name": "test-mail-listener", "port": 587},
-    {"name": "fiktiver-Container", "port": 80},
+    {"name": "test-refused-service", "port": 80, "label": "Web 2"},
+    {"name": "test-web-listener", "port": 80, "label": "Web"},
+    {"name": "test-sql-listener", "port": 1433, "label": "SQL"},
+    {"name": "test-ssh-listener", "port": 22, "label": "SSH"},
+    {"name": "test-mail-listener", "port": 587, "label": "Mail"},
+    {"name": "fiktiver-Container", "port": 80, "label": "Fiktiv"},
     {"name": "kaputt"}
 ]

@@ -12,7 +12,7 @@ if ($services === null) {         //json_decode liefert bei ungültigem JSON nul
 //Semantik-Check
 $valid = [];
 foreach ($services as $svc) {
-    if (!is_array($svc) || !isset($svc['name']) || !isset($svc['port'])) {   //isset fragt: existiert der Schlüssel im array und ist der Wert nicht null
+    if (!is_array($svc) || !isset($svc['name']) || !isset($svc['port']) ||!isset($svc['label'])) {   //isset fragt: existiert der Schlüssel im array und ist der Wert nicht null
         echo "WARNUNG: unvollständiger Dienst-Eintrag, übersprungen: " . json_encode($svc) . "\n";
         continue;                                                           //brich diesen Schleifendurchgang ab, geh zum nächsten
     }
@@ -48,7 +48,8 @@ foreach ($services as $svc) {
     $result_list[] = [
         'name' => $svc['name'],
         'state' => $state,
-        'latency_ms' => $latency_ms
+        'latency_ms' => $latency_ms,
+        'label' => $svc['label']
     ];
 
     echo "Name: " . $svc['name'] . " | Port: " .  $svc['port'] . " | Status: $state | error code: $error_code | error message: $error_message | Latenz: $latency_ms ms\n";
