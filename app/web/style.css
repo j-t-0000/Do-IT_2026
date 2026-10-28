@@ -7,7 +7,7 @@
 
 :root {
     --text-color: #191b23;
-    --state-down: #f51212;
+    --state-down: #c01a1a;
     --state-up: #4fc438;
     --state-refused: #979090;
 
@@ -15,7 +15,7 @@
 
 body {
     font-family: system-ui, sans-serif;
-    margin: 2 rem;
+    margin: 2rem;
     color: var(--text-color);
 }
 
@@ -23,6 +23,12 @@ h1 {
     text-align: center;
     border-bottom: 2px solid var(--text-color);
     padding: 2rem;
+    margin-bottom: 2rem;
+}
+
+#legend {
+    margin-bottom: 2rem;
+    font-weight: 500;
 }
 
 .cards-container {
@@ -40,16 +46,45 @@ h1 {
     justify-content: center;
     align-items: center;
     padding: 2rem;
+    font-weight: 600;
+    width: min(100%, 300px);
 }
 
-.up {
+.empty {
+    width: 150;
+    border: 2px solid var(--text-color);
+    border-radius: 5px;
+    box-shadow: 0px 2px 10px 0px rgba(0, 0, 0, 0.25);
+    padding: 2rem;
+    font-weight: 600;
+}
+
+.card-up {
     background-color: var(--state-up);
 }
 
-.down {
+.card-down {
     background-color: var(--state-down);
 }
 
-.refused {
+.card-refused {
     background-color: var(--state-refused);
+}
+
+.dot-up::marker {
+    color: var(--state-up);
+}
+
+.dot-down::marker  {
+    color: var(--state-down);
+}
+
+.dot-refused::marker {
+    color: var(--state-refused);
+}
+
+#dataAge {
+    display: inline-block;
+    font-weight: 600;
+    margin-bottom: 2rem;
 }
