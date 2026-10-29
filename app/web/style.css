@@ -8,8 +8,14 @@
 :root {
     --text-color: #191b23;
     --state-down: #c01a1a;
-    --state-up: #4fc438;
+    --state-up: rgb(79, 196, 56);
     --state-refused: #979090;
+    --bg-state-up :rgba(79, 196, 56, 0.14);
+    --bg-state-down: rgba(192, 26, 26, 0.14);
+    --bg-state-refused: rgba(151, 144, 144, 0.18);
+    --bg-color: #f4f5f7;
+    --bg-color-card: #ffffff;
+    --border-color: #d8dce3;
 
 }
 
@@ -21,9 +27,9 @@ body {
 
 h1 {
     text-align: center;
-    border-bottom: 2px solid var(--text-color);
-    padding: 2rem;
-    margin-bottom: 2rem;
+    border-bottom: 1px solid var(--border-color);
+    padding: 0 0 1rem;
+    margin-bottom: 0 0 1.5rem;
 }
 
 #legend {
@@ -37,9 +43,10 @@ h1 {
     gap: 3rem;
 }
 .one-card-container {
-    border: 2px solid var(--text-color);
-    border-radius: 5px;
-    box-shadow: 0px 2px 10px 0px rgba(0, 0, 0, 0.25);
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.10);
+    background-color: var(--bg-color-card);
     display: flex;
     flex-direction: column;
     gap: 2rem;
@@ -51,25 +58,41 @@ h1 {
 }
 
 .empty {
-    width: 150;
-    border: 2px solid var(--text-color);
-    border-radius: 5px;
-    box-shadow: 0px 2px 10px 0px rgba(0, 0, 0, 0.25);
+    width: 150px;
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    box-shadow: 0px 2px 10px 0px rgba(0, 0, 0, 0.10);
     padding: 2rem;
     font-weight: 600;
 }
 
 .card-up {
-    background-color: var(--state-up);
+    background-color: var(--bg-state-up);
+
 }
 
 .card-down {
-    background-color: var(--state-down);
+    background-color: var(--bg-state-down);
+    border-color: var(--state-down);
 }
 
 .card-refused {
-    background-color: var(--state-refused);
+    background-color: var(--bg-state-refused);
 }
+
+.status::before {
+    content: "";
+    display: inline-block;
+    width: .55rem;
+    height: .55rem;
+    border-radius: 50%;
+    margin-right: .45rem;
+    vertical-align: middle;
+}
+
+.card-up .status::before {background: var(--state-up);}
+.card-down .status::before {background: var(--state-down);}
+.card-refused .status::before {background: var(--state-refused);}
 
 .dot-up::marker {
     color: var(--state-up);

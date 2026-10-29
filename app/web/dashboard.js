@@ -31,6 +31,7 @@ function createCards(data) {
             card.appendChild(header);
 
             const stateBox = document.createElement('div');
+            stateBox.classList.add('status');
             stateBox.textContent = "Status: " + item.state;
             card.appendChild(stateBox);
 
