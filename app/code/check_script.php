@@ -33,7 +33,7 @@ foreach ($services as $svc) {
 
     if ($connect !== false) {       //connection & dienst steht
         $state = 'up';
-    } elseif ($error_code === 111) {        //connection geht
+    } elseif ($error_code === 111) {        //connection geht & dienst nicht
         $state = 'refused';
     } else {
         $state = 'down';

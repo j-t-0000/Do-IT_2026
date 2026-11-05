@@ -12,6 +12,7 @@ async function getData() {
 
 }
 
+//Karten aus Daten erzeugen
 function createCards(data) {
     const cardsContainer = document.getElementById('cardsContainer');
     cardsContainer.replaceChildren();
