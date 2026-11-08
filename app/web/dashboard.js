@@ -101,7 +101,7 @@ function localTimer () {
 
 //Timer für automatischen Fetch
 function autoFetch () {
-    setInterval(getData, 30000);
+    setInterval(getData, 20000);
 }
 
 getData();
